@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="container1">
+        <div class="card">
+            <div class="drop_box">
+                <h1 style="text-align: center;">Login</h1>
+                <br>
+                <form action="{{ url_for('login') }}" method="POST">
+                    <div class="form-group">
+                        <label for="username">Username :</label>
+                        <input type="text" name="username" id="username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password :</label>
+                        <input type="password" name="password" id="password" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <p>New user? <a href="{{ url_for('register') }}">Register here</a></p>
+                    </div>
+                    <button type="submit" class="btn1 btn-primary">Login</button>
+                    {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% if messages %}
+                    <ul class="flashes">
+                        {% for category, message in messages %}
+                        <li class="flash {{ category }}">{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+{%endblock%}
+</html>

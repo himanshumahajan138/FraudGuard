@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Similar Document Template Matching Algorithm</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="{{url_for('static' , filename = 'assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="logo"></div>
+            <div class="logo"></div>
+            <div class="logo">
+                <h1>
+                    <a href="/">Similar Document Template Matching Algorithm </a>
+                </h1>
+            </div>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    {% if current_user.is_authenticated %}
+                    <li class="dropdown" style="justify-content: right;">
+                        <a class="nav-link" href="#" data-bs-toggle="dropdown">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3zm9 11v-1a7 7 0 0 0-7-7h-4a7 7 0 0 0-7 7v1h2v-1a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v1z">
+                                </path>
+                            </svg>
+                            <span class="dropdown-toggle ps-2">{{current_user.username}}</span>
+                        </a><!-- End Profile Iamge Icon -->
+
+                        <ul class="dropdown-menu ">
+
+                            <!-- <li>
+                                <a class="dropdown-item" href="/result">
+                                    <i class="bi bi-person" style="font-size: 100%;">   Results</i>
+                                </a>
+                            </li> -->
+
+                            <li>
+                                <a class="dropdown-item" href="/logout">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                                        <path fill-rule="evenodd"
+                                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                                    </svg>
+                                    <span class="ps-2">Logout</span>
+
+                                </a>
+                            </li>
+
+                        </ul><!-- End Profile Dropdown Items -->
+                    </li><!-- End Profile Nav -->
+
+                    {% else %}
+                    <li><a class="getstarted scrollto" href="/login">Login</a></li>
+                    {% endif %}
+                </ul>
+            </nav><!-- .navbar -->
+        </div>
+    </header><!-- End Header -->
+    {% block body %}
+
+    {% endblock %}
