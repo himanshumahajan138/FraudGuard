@@ -2,7 +2,6 @@ easyocr==1.7.1
 Flask==2.3.2
 Flask_Bcrypt==1.0.1
 Flask_Login==0.6.3
-flask_wtf==1.2.1
 numpy==1.26.4
 opencv_contrib_python==4.9.0.80
 opencv_python==4.9.0.80
@@ -10,4 +9,3 @@ opencv_python_headless==4.9.0.80
 Pillow==10.3.0
 pymongo==4.4.0
 python-dotenv==1.0.1
-WTForms==3.1.2

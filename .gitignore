@@ -1,6 +1,7 @@
 #user defined
 uploads
-Main/templates/results.html
+Dockerfile
+app/templates/results.html
 
 # Byte-compiled / optimized / DLL files
 *.pyc
