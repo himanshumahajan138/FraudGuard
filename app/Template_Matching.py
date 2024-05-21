@@ -134,12 +134,21 @@ def compare_image_with_templates(
             - The second element is a string with either "ACCEPTED !" or a rejection message if no templates matched.
     """
 
+    # Get the directory of the current script (main.py)
+    current_script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Construct the path to the INVOICES directory
+    template_folder = os.path.join(current_script_dir, '..', template_folder)
+
+    # Convert to absolute path
+    template_folder = os.path.abspath(template_folder)
+
+
     # Preprocess the image before template matching
     image = preprocess_image(image_path)  # Assumes preprocess_image function exists
 
     # Use ThreadPoolExecutor for multithreaded template matching
     with ThreadPoolExecutor(max_workers=num_threads) as executor:
-
         # Iterate through template files in the folder
         for filename in os.listdir(template_folder):
             if filename.endswith(".png"):
